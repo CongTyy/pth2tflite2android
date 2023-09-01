@@ -1,0 +1,1 @@
+python export.py --data data/coco.yaml --weights yolov5n.pt --include tflite --img 640  --agnostic-nms --nms
