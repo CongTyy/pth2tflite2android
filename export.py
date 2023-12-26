@@ -304,7 +304,7 @@ def export_saved_model(model,
         inputs = tf.keras.Input(shape=(*imgsz, ch), batch_size=None if dynamic else batch_size)
         outputs = tf_model.predict(inputs, tf_nms, agnostic_nms, topk_per_class, topk_all, iou_thres, conf_thres)
         keras_model = tf.keras.Model(inputs=inputs, outputs=outputs)
-        keras_model.output_names = ['out_0', 'out_1', 'out_2', 'out_3']
+        # keras_model.output_names = ['out_0', 'out_1', 'out_2', 'out_3']
         keras_model.trainable = False
         # keras_model._nested_outputs[0]._name = 'bboxes'
         keras_model.summary()
@@ -593,7 +593,7 @@ def parse_opt():
     parser.add_argument('--conf-thres', type=float, default=0.25, help='TF.js NMS: confidence threshold')
     parser.add_argument('--include',
                         nargs='+',
-                        default=['torchscript', 'onnx'],
+                        default=['torchscript', 'onnx', 'tflite'],
                         help='torchscript, onnx, openvino, engine, coreml, saved_model, pb, tflite, edgetpu, tfjs')
     opt = parser.parse_args()
     print_args(vars(opt))

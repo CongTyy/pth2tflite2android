@@ -14,9 +14,7 @@ import os
 # Creates model info.
 model_meta = _metadata_fb.ModelMetadataT()
 model_meta.name = "Yolov5 object detector"
-model_meta.description = ("Identify the most prominent object in the "
-                          "image from a set of 1,001 categories such as "
-                          "trees, animals, food, vehicles, person etc.")
+model_meta.description = ("quanque")
 model_meta.version = "v1"
 model_meta.author = "dvigouro"
 model_meta.license = ("Apache License. Version 2.0 "
@@ -117,8 +115,7 @@ group.tensorNames = [
 # Creates subgraph info.
 subgraph = _metadata_fb.SubGraphMetadataT()
 subgraph.inputTensorMetadata = [input_meta]
-subgraph.outputTensorMetadata = [output_location_meta, output_class_meta, output_score_meta,
-    output_number_meta]
+subgraph.outputTensorMetadata = [output_location_meta, output_class_meta, output_score_meta, output_number_meta]
 subgraph.outputTensorGroups = [group]
 
 model_meta.subgraphMetadata = [subgraph]
